@@ -52,12 +52,9 @@ class Ventana(QWidget, View):
                 down_video = video.streams.get_audio_only()
                 down_video.download(output_path=self.SAVE_PATH, filename=nombre)
                 self.comentario.setText(' Descarga completada '.center(50, '-'))
-
-            
         
         except Exception as e:
             self.comentario.setText(str(e))
-        
 
     def close(self):
         sys.exit()
@@ -67,4 +64,3 @@ if __name__ == "__main__":
     widget = Ventana()
     widget.show()
     sys.exit(app.exec())
-    
